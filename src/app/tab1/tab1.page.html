@@ -1,17 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title>
+        Calculadora
+      </ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <strong><ion-input disabled [(ngModel)]="operacion" style="color:black"></ion-input></strong>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='condition("%")'>%</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='Ce()'>CE</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='clear()'>C</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="danger" (click)='eliminarUltimo()'>del</ion-button></ion-col>
+  
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='divicionParados()'>1/x</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='cuadradonumero()'>x2</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='raizCuadrada()'>sqrt</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='condition("/")'>/</ion-button></ion-col>
+  
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("7")'>7</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("8")'>8</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("9")'>9</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='condition("*")'>x</ion-button></ion-col>
+  
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("4")'>4</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("5")'>5</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("6")'>6</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='condition("-")'>-</ion-button></ion-col>
+  
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("1")'>1</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("2")'>2</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("3")'>3</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='condition("+")'>+</ion-button></ion-col>
+  
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button size="large" expand="full" color="light">+/-</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue("0")' >0</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='entervalue(".")'>,</ion-button></ion-col>
+        <ion-col><ion-button size="large" expand="full" color="light" (click)='result()' >=</ion-button></ion-col>
+  
+      </ion-row>
+   </ion-grid>
+  </ion-content>
+  
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
